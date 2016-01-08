@@ -1,0 +1,89 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "cwcase",
+            "otherEntityName": "cwcase",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "countyCode",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "hearingType",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "courtDept",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "date",
+            "fieldType": "DateTime"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "status",
+            "fieldType": "Statuscode",
+            "fieldValues": "Created,Sent,Received"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "caseworker",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "cwcaseid",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "doc",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "image",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldId": 10,
+            "fieldName": "summary",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 11,
+            "fieldName": "attendeeFirst",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 12,
+            "fieldName": "attendeeLast",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 13,
+            "fieldName": "time",
+            "fieldType": "DateTime"
+        },
+        {
+            "fieldId": 14,
+            "fieldName": "language",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151222224710",
+    "dto": "no",
+    "pagination": "no"
+}

@@ -1,0 +1,49 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "cwcase",
+            "otherEntityName": "cwcase",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "first",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "30"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "last",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "30"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "dob",
+            "fieldType": "DateTime"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "ssn",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "casefk",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20151008193441",
+    "dto": "no",
+    "pagination": "no"
+}

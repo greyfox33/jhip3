@@ -1,0 +1,74 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myChildLabel">Create or edit a Child</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="child.id" readonly>
+        </div>
+        <div class="form-group">
+            <label for="field_first">First</label>
+            <input type="text" class="form-control" name="first" id="field_first"
+                    ng-model="child.first"
+                    ng-maxlength="30">
+            <div ng-show="editForm.first.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.first.$error.maxlength" translate-value-max="30">
+                    This field cannot be longer than 30 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_last">Last</label>
+            <input type="text" class="form-control" name="last" id="field_last"
+                    ng-model="child.last"
+                    ng-maxlength="30">
+            <div ng-show="editForm.last.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.last.$error.maxlength" translate-value-max="30">
+                    This field cannot be longer than 30 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_dob">Dob</label>
+            <input type="datetime-local" class="form-control" name="dob" id="field_dob"
+                    ng-model="child.dob" ng-model-options="{timezone: 'UTC'}"
+                    >
+        </div>
+        <div class="form-group">
+            <label for="field_ssn">Ssn</label>
+            <input type="text" class="form-control" name="ssn" id="field_ssn"
+                    ng-model="child.ssn"
+                    >
+        </div>
+        <div class="form-group">
+            <label for="field_casefk">Casefk</label>
+            <input type="number" class="form-control" name="casefk" id="field_casefk"
+                    ng-model="child.casefk"
+                    >
+        </div>
+
+        <div class="form-group">
+            <label for="field_cwcase">cwcase</label>
+            <select class="form-control" id="field_cwcase" name="cwcase" ng-model="child.cwcase" ng-options="cwcase as cwcase.id for cwcase in cwcases track by cwcase.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

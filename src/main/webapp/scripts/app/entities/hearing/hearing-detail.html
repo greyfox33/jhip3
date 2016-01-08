@@ -1,0 +1,142 @@
+
+<div>
+    <h2><span>Hearing</span> {{hearing.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>CountyCode</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{hearing.countyCode}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>HearingType</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{hearing.hearingType}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CourtDept</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{hearing.courtDept}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Date</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{hearing.date}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Status</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'jhip3App.Statuscode.' + hearing.status}}">{{hearing.status}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Caseworker</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{hearing.caseworker}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Cwcaseid</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{hearing.cwcaseid}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Doc</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{hearing.doc}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Image</span>
+                </td>
+                <td>
+                    <img data-ng-src="{{'data:image/*;base64,' + hearing.image}}" style="max-width: 100%;" ng-if="hearing.image"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Summary</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{hearing.summary}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>AttendeeFirst</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{hearing.attendeeFirst}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>AttendeeLast</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{hearing.attendeeLast}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Time</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{hearing.time}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Language</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{hearing.language}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>cwcase</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="cwcase.detail({id:hearing.cwcase.id})">{{hearing.cwcase.id}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

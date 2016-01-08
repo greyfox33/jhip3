@@ -1,0 +1,26 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "child",
+            "otherEntityName": "child",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "cwcase"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "createdate",
+            "fieldType": "DateTime"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "casestatus",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151008193238",
+    "dto": "no",
+    "pagination": "no"
+}

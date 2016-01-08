@@ -1,0 +1,147 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myHearingLabel">Create or edit a Hearing</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="hearing.id" readonly>
+        </div>
+        <div class="form-group">
+            <label for="field_countyCode">CountyCode</label>
+            <input type="number" class="form-control" name="countyCode" id="field_countyCode"
+                    ng-model="hearing.countyCode"
+                    >
+        </div>
+        <div class="form-group">
+            <label for="field_hearingType">HearingType</label>
+            <input type="text" class="form-control" name="hearingType" id="field_hearingType"
+                    ng-model="hearing.hearingType"
+                    >
+        </div>
+        <div class="form-group">
+            <label for="field_courtDept">CourtDept</label>
+            <input type="text" class="form-control" name="courtDept" id="field_courtDept"
+                    ng-model="hearing.courtDept"
+                    >
+        </div>
+        <div class="form-group">
+            <label for="field_date">Date</label>
+            <input type="datetime-local" class="form-control" name="date" id="field_date"
+                    ng-model="hearing.date" ng-model-options="{timezone: 'UTC'}"
+                    >
+        </div>
+        <div class="form-group">
+            <label for="field_status">Status</label>
+            <select class="form-control" name="status" ng-model="hearing.status" id="field_status">
+                <option value="Created">Created</option>
+                <option value="Sent">Sent</option>
+                <option value="Received">Received</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_caseworker">Caseworker</label>
+            <input type="text" class="form-control" name="caseworker" id="field_caseworker"
+                    ng-model="hearing.caseworker"
+                    >
+        </div>
+        <div class="form-group">
+            <label for="field_cwcaseid">Cwcaseid</label>
+            <input type="number" class="form-control" name="cwcaseid" id="field_cwcaseid"
+                    ng-model="hearing.cwcaseid"
+                    >
+        </div>
+        <div class="form-group" ngf-drop ngf-change="setDoc($file, hearing)">
+            <label for="field_doc">Doc</label>
+            <div>
+                <div class="help-block clearfix">
+                    <span class="pull-left">{{abbreviate(hearing.doc) + ' ' + byteSize(hearing.doc)}}</span>
+                    <button ng-click="hearing.doc=null"
+                            ng-if="hearing.doc"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="file" ngf-select class="btn btn-default btn-block"
+                        ngf-change="setDoc($file, hearing)">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="doc" id="field_doc"
+                    ng-model="hearing.doc"
+                    >
+        </div>
+        <div class="form-group" ngf-drop ngf-change="setImage($file, hearing)" ngf-pattern="'image/*'">
+            <label for="field_image">Image</label>
+            <div>
+                <img data-ng-src="{{'data:image/*;base64,' + hearing.image}}" style="max-height: 100px;" ng-if="hearing.image"/>
+                <div class="help-block clearfix">
+                    <span class="pull-left">{{byteSize(hearing.image)}}</span>
+                    <button ng-click="hearing.image=null"
+                            ng-if="hearing.image"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="file" ngf-select class="btn btn-default btn-block"
+                        ngf-change="setImage($file, hearing)" accept="image/*">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="image" id="field_image"
+                    ng-model="hearing.image"
+                    >
+        </div>
+        <div class="form-group">
+            <label for="field_summary">Summary</label>
+            <input type="text" class="form-control" name="summary" id="field_summary"
+                    ng-model="hearing.summary"
+                    >
+        </div>
+        <div class="form-group">
+            <label for="field_attendeeFirst">AttendeeFirst</label>
+            <input type="text" class="form-control" name="attendeeFirst" id="field_attendeeFirst"
+                    ng-model="hearing.attendeeFirst"
+                    >
+        </div>
+        <div class="form-group">
+            <label for="field_attendeeLast">AttendeeLast</label>
+            <input type="text" class="form-control" name="attendeeLast" id="field_attendeeLast"
+                    ng-model="hearing.attendeeLast"
+                    >
+        </div>
+        <div class="form-group">
+            <label for="field_time">Time</label>
+            <input type="datetime-local" class="form-control" name="time" id="field_time"
+                    ng-model="hearing.time" ng-model-options="{timezone: 'UTC'}"
+                    >
+        </div>
+        <div class="form-group">
+            <label for="field_language">Language</label>
+            <input type="text" class="form-control" name="language" id="field_language"
+                    ng-model="hearing.language"
+                    >
+        </div>
+
+        <div class="form-group">
+            <label for="field_cwcase">cwcase</label>
+            <select class="form-control" id="field_cwcase" name="cwcase" ng-model="hearing.cwcase" ng-options="cwcase as cwcase.id for cwcase in cwcases track by cwcase.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
