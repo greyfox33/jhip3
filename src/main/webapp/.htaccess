@@ -16,7 +16,7 @@
 # http://code.google.com/p/html5security/wiki/CrossOriginRequestSecurity
 # http://enable-cors.org/
 
-#(RMT-1/14/16) Giving this a try
+#(RMT-1/14/16) Giving this a try to allow CORS
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
 </IfModule>
