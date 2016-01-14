@@ -1,9 +1,7 @@
 OAUTH2 TOKEN USAGE
 ==================
 
-curl -X POST -vu jhip3app:mySecretOAuthSecret http://jhip3-env.elasticbeanstalk.com/oauth/token -H "Accept: application/json" -d 
-
-"username=admin&password=admin&grant_type=password&scope=read&client_id=jhip3app&client_secret=mySecretOAuthSecret"
+curl -X POST -vu jhip3app:mySecretOAuthSecret http://jhip3-env.elasticbeanstalk.com/oauth/token -H "Accept: application/json" -d "username=admin&password=admin&grant_type=password&scope=read&client_id=jhip3app&client_secret=mySecretOAuthSecret"
 
 1. create login with new user
 2. use the above curl command to get a token
