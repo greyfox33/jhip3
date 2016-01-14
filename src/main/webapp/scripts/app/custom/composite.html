@@ -66,31 +66,31 @@
             </tbody>
        	</table>
     </div>
-    <div>Children Associated With Case </div>
+    <div><h2>Children</h2></div>
     <div>
        	<table class="table table-striped">
        		<thead>
                 <tr>
-                    <th>ID</th>
+<!--                     <th>ID</th> -->
                     <th>FirstName</th>
                     <th>LastName</th>
                     <th>BirthDate</th>
                     <th>SSN</th>
-                    <th>Link</th>
+<!--                     <th>Link</th> -->
                     <th></th>
                 </tr>
             </thead>	
             <tbody>
                 <tr ng-repeat="child in children">
-                   <td><a ui-sref="child.detail({id:child.id})">{{child.id}}</a></td>
+<!--                    <td><a ui-sref="child.detail({id:child.id})">{{child.id}}</a></td> -->
                     <td>{{child.first}}</td>
                     <td>{{child.last}}</td>
                     <td>{{child.dob}}</td>
                     <td>{{child.ssn}}</td>
-                    <td>{{child.casefk}}</td>
-                    <td>
-                        <a ui-sref="cwcase.detail({id:child.cwcase.id})">{{child.cwcase.id}}</a>
-                    </td>
+<!--                     <td>{{child.casefk}}</td> -->
+<!--                     <td> -->
+<!--                         <a ui-sref="cwcase.detail({id:child.cwcase.id})">{{child.cwcase.id}}</a> -->
+<!--                     </td> -->
                     <td>
                         <button type="submit"
                                 ui-sref="child.detail({id:child.id})"
@@ -112,46 +112,52 @@
             </tbody>
          </table>
     </div>
-	<div>Hearings Associated With Case </div>
+	<div><h2>Hearings</h2></div>
 	<table class="table table-striped">
             <thead>
                 <tr>
-                    <th>CountyCode</th>
+<!--                     <th>CountyCode</th> -->
+<!--                     <th>HearingType</th> -->
+<!--                     <th>CourtDept</th> -->
+<!--                     <th>Date</th> -->
+<!--                     <th>Status</th> -->
+<!--                     <th>Caseworker</th> -->
+<!--                     <th>Cwcaseid</th> -->
+<!--                     <th>Doc</th> -->
+<!--                     <th>Image</th> -->
+<!--                     <th>Summary</th> -->
+<!--                     <th>AttendeeFirst</th> -->
+<!--                     <th>AttendeeLast</th> -->
+<!--                     <th>Time</th> -->
+<!--                     <th>Language</th> -->
+<!--                     <th></th> -->
                     <th>HearingType</th>
-                    <th>CourtDept</th>
-                    <th>Date</th>
+<!--                     <th>CourtDept</th> -->
                     <th>Status</th>
                     <th>Caseworker</th>
-                    <th>Cwcaseid</th>
-                    <th>Doc</th>
-                    <th>Image</th>
                     <th>Summary</th>
-                    <th>AttendeeFirst</th>
-                    <th>AttendeeLast</th>
-                    <th>Time</th>
-                    <th>Language</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="hearing in hearings">
 <!--                     <td><a ui-sref="hearing.detail({id:hearing.id})">{{hearing.id}}</a></td> -->
-                    <td>{{hearing.countyCode}}</td>
-                    <td>{{hearing.hearingType}}</td>
+<!--                     <td>{{hearing.countyCode}}</td> -->
+<!--                     <td>{{hearing.hearingType}}</td> -->
                     <td>{{hearing.courtDept}}</td>
-                    <td>{{hearing.date}}</td>
+<!--                     <td>{{hearing.date}}</td> -->
                     <td translate="{{'jhip3App.Statuscode.' + hearing.status}}">{{hearing.status}}</td>
                     <td>{{hearing.caseworker}}</td>
-                    <td>{{hearing.cwcaseid}}</td>
-                    <td>{{abbreviate(hearing.doc)}} {{byteSize(hearing.doc)}}</td>
-                    <td>
-                        <img data-ng-src="{{'data:image/*;base64,' + hearing.image}}" style="max-height: 30px;" ng-if="hearing.image"/> {{byteSize(hearing.image)}}
-                    </td>
+<!--                     <td>{{hearing.cwcaseid}}</td> -->
+<!--                     <td>{{abbreviate(hearing.doc)}} {{byteSize(hearing.doc)}}</td> -->
+<!--                     <td> -->
+<!--                         <img data-ng-src="{{'data:image/*;base64,' + hearing.image}}" style="max-height: 30px;" ng-if="hearing.image"/> {{byteSize(hearing.image)}} -->
+<!--                     </td> -->
                     <td>{{hearing.summary}}</td>
-                    <td>{{hearing.attendeeFirst}}</td>
-                    <td>{{hearing.attendeeLast}}</td>
-                    <td>{{hearing.time}}</td>
-                    <td>{{hearing.language}}</td>
+<!--                     <td>{{hearing.attendeeFirst}}</td> -->
+<!--                     <td>{{hearing.attendeeLast}}</td> -->
+<!--                     <td>{{hearing.time}}</td> -->
+<!--                     <td>{{hearing.language}}</td> -->
                     <td>
                         <button type="submit"
                                 ui-sref="hearing.detail({id:hearing.id})"
